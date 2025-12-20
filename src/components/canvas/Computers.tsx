@@ -7,7 +7,7 @@ import { useWebGLContext } from "../../hooks/useWebGLContext";
 
 const Computers: React.FC<{ isMobile: boolean; onLoaded?: () => void }> = ({ isMobile, onLoaded }) => {
   // Correct: useGLTF must be called directly in a Canvas child
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("/desktop_pc/scene.gltf");
   const [hasLoaded, setHasLoaded] = useState(false);
   useEffect(() => {
     if (computer.scene && !hasLoaded) {
@@ -77,7 +77,7 @@ const ComputersCanvas = () => {
       frameloop="always"
       dpr={[1, 2]}
       camera={{ position: [10, 3, 5], fov: 30 }}
-      gl={{ 
+      gl={{
         preserveDrawingBuffer: true,
         antialias: true,
         powerPreference: "high-performance",
@@ -104,7 +104,7 @@ const ComputersCanvas = () => {
               {Math.round(progress)}%
             </div>
             <div className="w-48 h-2 bg-gray-700 rounded-full overflow-hidden">
-              <div 
+              <div
                 className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300"
                 style={{ width: `${progress}%` }}
               />
@@ -129,5 +129,5 @@ const ComputersCanvas = () => {
 };
 
 // Cache the loaded GLTF model globally for reuse
-useGLTF.preload("./desktop_pc/scene.gltf");
+useGLTF.preload("/desktop_pc/scene.gltf");
 export default ComputersCanvas;

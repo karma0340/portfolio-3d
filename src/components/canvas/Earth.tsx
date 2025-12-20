@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 const Earth = () => {
   // Correct: useGLTF must be called directly in a Canvas child
-  const earth = useGLTF("./planet/scene.gltf");
+  const earth = useGLTF("/planet/scene.gltf");
   return (
     <primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />
   );
@@ -19,7 +19,7 @@ const EarthCanvas = () => {
       shadows
       frameloop="demand"
       dpr={1}
-      gl={{ 
+      gl={{
         preserveDrawingBuffer: false,
         antialias: false,
         powerPreference: "high-performance",
@@ -38,7 +38,7 @@ const EarthCanvas = () => {
         gl.toneMapping = THREE.ACESFilmicToneMapping;
         gl.toneMappingExposure = 0.5;
       }}
-          >
+    >
       <Suspense fallback={
         <Html center>
           <div className="flex flex-col items-center justify-center h-screen">
@@ -49,7 +49,7 @@ const EarthCanvas = () => {
               {Math.round(progress)}%
             </div>
             <div className="w-48 h-2 bg-gray-700 rounded-full overflow-hidden">
-              <div 
+              <div
                 className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300"
                 style={{ width: `${progress}%` }}
               />
@@ -73,5 +73,5 @@ const EarthCanvas = () => {
 };
 
 // Cache the loaded GLTF model globally for reuse
-useGLTF.preload("./planet/scene.gltf");
+useGLTF.preload("/planet/scene.gltf");
 export default EarthCanvas;

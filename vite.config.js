@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./",   // 👈 VERY IMPORTANT
+  base: "/",   // 👈 VERY IMPORTANT
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1000,

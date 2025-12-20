@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react';
 class WebGLContextManager {
   private static instance: WebGLContextManager;
   private contexts: Set<WebGLRenderingContext> = new Set();
-  private maxContexts = 4; // Conservative limit
+  private maxContexts = 25; // Increased limit to allow all Tech balls + Hero + Earth
 
-  private constructor() {}
+  private constructor() { }
 
   static getInstance(): WebGLContextManager {
     if (!WebGLContextManager.instance) {

@@ -11,10 +11,5 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "env": [
-    "EMAIL_USER",
-    "EMAIL_PASS",
-    "NODE_ENV"
   ]
 }

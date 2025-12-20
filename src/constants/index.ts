@@ -1,39 +1,39 @@
 import type {
-    TExperience,
-    TNavLink,
-    TProject,
-    TService,
-    TTechnology,
-    TTestimonial,
+  TExperience,
+  TNavLink,
+  TProject,
+  TService,
+  TTechnology,
+  TTestimonial,
 } from "../types";
 
 import {
-    backend,
-    // Project images
-    carrent,
-    creator,
-    css,
-    docker,
-    figma,
-    git,
-    html,
-    javascript,
-    jobit,
-    meta,
-    mobile,
-    mongodb,
-    moviestrailer,
-    nodejs,
-    reactjs,
-    redux,
-    shopify,
-    starbucks,
-    tailwind,
-    tesla,
-    threejs,
-    tripguide,
-    typescript,
-    web,
+  backend,
+  // Project images
+  carrent,
+  creator,
+  css,
+  docker,
+  figma,
+  git,
+  html,
+  javascript,
+  jobit,
+  meta,
+  mobile,
+  mongodb,
+  moviestrailer,
+  nodejs,
+  reactjs,
+  redux,
+  shopify,
+  starbucks,
+  tailwind,
+  tesla,
+  threejs,
+  tripguide,
+  typescript,
+  web,
 } from "../assets";
 
 // Export all constants
@@ -126,7 +126,7 @@ const technologies: TTechnology[] = [
     name: "docker",
     icon: docker,
   },
-  
+
 ];
 
 const experiences: TExperience[] = [
@@ -191,7 +191,7 @@ const testimonials: TTestimonial[] = [
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
-    image: "/assets/testimonials/4.jpg",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
@@ -199,7 +199,7 @@ const testimonials: TTestimonial[] = [
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
-    image: "/assets/testimonials/5.jpg",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     testimonial:
@@ -207,7 +207,7 @@ const testimonials: TTestimonial[] = [
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
-    image: "/assets/testimonials/6.jpg",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 const projects: TProject[] = [

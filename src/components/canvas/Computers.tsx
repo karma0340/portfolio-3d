@@ -1,5 +1,5 @@
 import { Html, OrbitControls, Preload, useGLTF, useProgress } from "@react-three/drei";
-import { useMemo } from "react";
+
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useEffect, useState } from "react";
 import { useWebGLContext } from "../../hooks/useWebGLContext";

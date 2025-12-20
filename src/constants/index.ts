@@ -191,7 +191,7 @@ const testimonials: TTestimonial[] = [
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "/assets/testimonials/4.jpg",
   },
   {
     testimonial:
@@ -199,7 +199,7 @@ const testimonials: TTestimonial[] = [
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    image: "/assets/testimonials/5.jpg",
   },
   {
     testimonial:
@@ -207,7 +207,7 @@ const testimonials: TTestimonial[] = [
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    image: "/assets/testimonials/6.jpg",
   },
 ];
 const projects: TProject[] = [

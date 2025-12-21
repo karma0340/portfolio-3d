@@ -7,8 +7,41 @@ import { useWebGLContext } from "../../hooks/useWebGLContext";
 
 const Computers: React.FC<{ isMobile: boolean; onLoaded?: () => void }> = ({ isMobile, onLoaded }) => {
   // Correct: useGLTF must be called directly in a Canvas child
-  const computer = useGLTF("/desktop_pc/scene.gltf");
+  const computer = useGLTF("/desktop_pc/scene.gltf?v=3");
   const [hasLoaded, setHasLoaded] = useState(false);
+
+  React.useLayoutEffect(() => {
+    if (computer.scene) {
+      computer.scene.traverse((child: any) => {
+        if (child.isMesh) {
+          const mesh = child as any;
+          const name = mesh.name.toLowerCase();
+
+          // Target parts that typically represent the PC Case/Tower
+          if (
+            name.includes("case") ||
+            name.includes("tower") ||
+            name.includes("pc") ||
+            name.includes("body") ||
+            name.includes("cabinet") ||
+            name.includes("chassis") ||
+            name.includes("frame")
+          ) {
+            if (mesh.material) {
+              // Create a clone of the material to avoid affecting other meshes that might share it
+              mesh.material = mesh.material.clone();
+              mesh.material.color.set("#ffffff");
+
+              // If it's a standard/physical material, let's make it look premium white
+              if (mesh.material.roughness !== undefined) mesh.material.roughness = 0.2;
+              if (mesh.material.metalness !== undefined) mesh.material.metalness = 0.1;
+            }
+          }
+        }
+      });
+    }
+  }, [computer.scene]);
+
   useEffect(() => {
     if (computer.scene && !hasLoaded) {
       setHasLoaded(true);
@@ -129,5 +162,5 @@ const ComputersCanvas = () => {
 };
 
 // Cache the loaded GLTF model globally for reuse
-useGLTF.preload("/desktop_pc/scene.gltf");
+useGLTF.preload("/desktop_pc/scene.gltf?v=3");
 export default ComputersCanvas;

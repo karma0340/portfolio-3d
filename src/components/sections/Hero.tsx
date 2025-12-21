@@ -11,8 +11,8 @@ const Hero = () => {
         <ComputersCanvas />
       </div>
 
-      <div className="absolute inset-0 top-0 max-w-7xl mx-auto w-full pointer-events-none z-5" style={{
-        background: 'linear-gradient(135deg, rgba(0,0,0,0.3) 0%, transparent 50%)',
+      <div className="absolute inset-0 top-0 w-full h-full pointer-events-none z-5" style={{
+        background: 'linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
       }} />
 
       <div
